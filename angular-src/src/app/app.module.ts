@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import {RegisterService} from './service/register/register.service';
+import {AuthService} from './service/auth/auth.service';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -43,7 +44,7 @@ const appRoutes:Routes=[
     FlashMessagesModule.forRoot()
     
   ],
-  providers: [RegisterService],
+  providers: [RegisterService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
