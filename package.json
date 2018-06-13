@@ -8,14 +8,17 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
+    "angular2-jwt": "^0.2.3",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "rxjs": "^6.2.1",
+    "rxjs-compat": "^6.2.1"
   },
   "author": "",
   "license": "ISC"
