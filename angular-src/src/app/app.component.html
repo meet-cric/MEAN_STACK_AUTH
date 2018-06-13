@@ -12,9 +12,8 @@
         </ul>
       
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLinkActive]="['active']"  [routerLink]="['/dashboard']" >Dashboard </a>
-        </li>      
+        
+          
         <li class="nav-item">
             <a class="nav-link"  [routerLinkActive]="['active']" [routerLink]="['/profile']">profile </a>
           </li>  
@@ -23,7 +22,10 @@
             </li>   
             <li class="nav-item">
                 <a class="nav-link" [routerLinkActive]="['active']"  [routerLink]="['/register']">Register</a>
-              </li>                             
+              </li> 
+            
+            <li class="nav-item" ><a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
+            </li>                             
       </ul>
     </div>
   </nav>  `
