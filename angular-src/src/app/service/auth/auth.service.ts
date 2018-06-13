@@ -22,13 +22,13 @@ export class AuthService {
   registerUser(user){
     let headers=new Headers();
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:8000/users/register',user,{headers:headers})
+    return this.http.post('users/register',user,{headers:headers})
     .pipe(map(res => res.json()));
   }
   validateUser(user){
     let headers=new Headers();
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:8000/users/authenticate',user,{headers:headers})
+    return this.http.post('users/authenticate',user,{headers:headers})
     .pipe(map(res => res.json()));
   }
   loadToken(){
@@ -39,7 +39,7 @@ export class AuthService {
     let headers=new Headers();
     headers.append('Authorization',this.authToken);
     headers.append('Content-type','application/json');
-    return this.http.get('http://localhost:8000/users/profile',{headers:headers})
+    return this.http.get('users/profile',{headers:headers})
     .pipe(map(res => res.json()));
   }
   storeUserData(token,user){
