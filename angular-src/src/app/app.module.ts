@@ -16,13 +16,14 @@ import { ProfileComponent } from './profile/profile.component';
 
 import {RegisterService} from './service/register/register.service';
 import {AuthService} from './service/auth/auth.service';
+import {AuthGuard} from './guard/auth.guard';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
 ]
 
 
@@ -44,7 +45,7 @@ const appRoutes:Routes=[
     FlashMessagesModule.forRoot()
     
   ],
-  providers: [RegisterService,AuthService],
+  providers: [RegisterService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

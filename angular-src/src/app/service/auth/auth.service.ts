@@ -3,6 +3,8 @@ import { Http, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { map } from 'rxjs/operators';
 import { tokenNotExpired } from 'angular2-jwt';
+
+
 import { pipe } from '@angular/core/src/render3/pipe';
 
 
@@ -13,6 +15,10 @@ export class AuthService {
   user:any;
   authToken:any;
   constructor(private http:Http) { }
+  
+  loggedIn() {
+    return tokenNotExpired();
+  }
   registerUser(user){
     let headers=new Headers();
     headers.append('Content-type','application/json');
@@ -48,7 +54,5 @@ export class AuthService {
     localStorage.clear();
 
   }
-  loggedIn() {
-    return tokenNotExpired();
-  }
+ 
 }
